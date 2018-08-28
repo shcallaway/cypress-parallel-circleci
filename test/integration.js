@@ -15,4 +15,5 @@ req(`http://proxy:${port}/`, {
   })
   .catch(() => {
     console.log("FAIL!");
+    process.exit(1);
   });

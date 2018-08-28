@@ -15,4 +15,5 @@ req(`http://localhost:${port}/`, {
   })
   .catch(() => {
     console.log("FAIL!");
+    process.exit(1);
   });
