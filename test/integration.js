@@ -1,7 +1,7 @@
 const req = require("request-promise");
 const assert = require("assert");
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 
 console.log("Running integration tests...");
 

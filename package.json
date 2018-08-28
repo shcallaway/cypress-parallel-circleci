@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "node ./index.js",
     "unit-test": "node ./test/unit.js",
     "integration-test": "node ./test/integration.js"
   },

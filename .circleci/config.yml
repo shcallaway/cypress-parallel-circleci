@@ -16,4 +16,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn unit-test && yarn integration-test
+      - run:
+          command: yarn start
+          background: true
+      - run: yarn unit-test
+      - run: yarn integration-test
