@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "echo No tests... yet."
+    "unit-test": "node ./test/unit.js",
+    "integration-test": "node ./test/integration.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
