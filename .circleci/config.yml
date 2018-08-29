@@ -5,6 +5,7 @@ jobs:
       # TODO: Use a base image that I uploaded myself
       - image: cypress/base:8
     working_directory: ~/repo
+    parallelism: 2
     steps:
       - checkout
       - run: yarn install
