@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./index.js",
-    "unit-test": "node ./test/unit.js",
-    "integration-test": "node ./test/integration.js"
+    "test": "./node_modules/.bin/cypress run"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

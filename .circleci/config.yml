@@ -19,5 +19,4 @@ jobs:
       - run:
           command: yarn start
           background: true
-      - run: yarn unit-test
-      - run: yarn integration-test
+      - run: yarn test
