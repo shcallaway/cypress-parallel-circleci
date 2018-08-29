@@ -10,4 +10,8 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome!");
 });
 
+app.get("*", (req, res) => {
+  res.status(404).send("Not Found");
+});
+
 app.listen(port, () => console.log(`Server is listening on port ${port}!`));
