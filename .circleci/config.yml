@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # TODO: Use a base image that I uploaded myself
-      - image: circleci/node:8.9.4
+      - image: cypress/base:8
     working_directory: ~/repo
     steps:
       - checkout
