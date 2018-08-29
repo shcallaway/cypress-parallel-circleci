@@ -15,6 +15,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
+            - /root/.cache/Cypress
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           command: yarn start
