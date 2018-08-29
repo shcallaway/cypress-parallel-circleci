@@ -5,11 +5,21 @@ jobs:
       # TODO: Use a base image that I uploaded myself
       - image: cypress/base:8
     working_directory: ~/repo
-    parallelism: 2
     steps:
       - checkout
       - run: yarn install
+  test:
+    parallelism: 2
+    docker:
+      - image: cypress/base:8
+    steps:
       - run:
           command: yarn start
           background: true
       - run: yarn test
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
