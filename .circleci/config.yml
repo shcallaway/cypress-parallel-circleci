@@ -4,7 +4,6 @@ jobs:
     docker:
       # TODO: Use a base image that I uploaded myself
       - image: cypress/base:8
-    working_directory: ~/repo
     steps:
       - checkout
       - run: yarn install
