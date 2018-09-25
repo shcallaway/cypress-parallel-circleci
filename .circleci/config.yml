@@ -14,8 +14,8 @@ jobs:
     docker:
       - image: cypress/base:8
     steps:
-      - attach_workspace
-	        at: .
+      - attach_workspace:
+	    at: .
       - run:
           command: yarn start
           background: true
