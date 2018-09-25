@@ -26,7 +26,8 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run ls
+      - run: ls -al
+      - run: pwd
       - run:
           command: yarn start
           background: true
