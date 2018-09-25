@@ -15,7 +15,6 @@ jobs:
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-            - .npm
             - .cache
       - persist_to_workspace:
           root: .
