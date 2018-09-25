@@ -39,11 +39,9 @@ jobs:
           background: true
       - run: yarn test
       - store_artifacts:
-          path:
-            - cypress/videos
+          path: cypress/videos
       - store_artifacts:
-          path:
-            - cypress/screenshots
+          path: cypress/screenshots
 
 workflows:
   version: 2
