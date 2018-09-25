@@ -17,9 +17,7 @@ jobs:
       - run: yarn install
       - save_cache:
           key: v1-deps-{{ .Branch }}
-          paths:
-            - node_modules
-            - /root/.cache
+          paths: node_modules
       - run: ls -al
       - run: pwd
       - persist_to_workspace:
@@ -32,7 +30,7 @@ jobs:
     parallelism: 2
     steps:
       - attach_workspace:
-          at: /root/project
+          at: /root
       - run: ls -al
       - run: pwd
       - run:
