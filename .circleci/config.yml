@@ -3,12 +3,25 @@ jobs:
   build:
     docker:
       - image: cypress/base:8
+        environment:
+          TERM: xterm
     steps:
       - checkout
+      - restore_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          key: v1-deps-{{ .Branch }}
+          key: v1-deps
       - run: yarn install
+      - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
       - persist_to_workspace:
           root: .
-          paths: .
+          paths:
+            - ~/.cache
+            - node_modules
   test:
     parallelism: 2
     docker:
