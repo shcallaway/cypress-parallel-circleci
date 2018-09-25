@@ -2,16 +2,20 @@ version: 2
 jobs:
   build:
     docker:
-      # TODO: Use a base image that I uploaded myself
       - image: cypress/base:8
     steps:
       - checkout
       - run: yarn install
+      - persist_to_workspace:
+          root: .
+          paths: .
   test:
     parallelism: 2
     docker:
       - image: cypress/base:8
     steps:
+      - attach_workspace
+	        at: .
       - run:
           command: yarn start
           background: true
