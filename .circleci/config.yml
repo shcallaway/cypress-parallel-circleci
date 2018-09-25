@@ -15,7 +15,7 @@ jobs:
       - image: cypress/base:8
     steps:
       - attach_workspace:
-	    at: .
+          at: .
       - run:
           command: yarn start
           background: true
