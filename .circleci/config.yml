@@ -35,6 +35,7 @@ jobs:
           at: /root
       - run:
           command: yarn start
+          # Start the HTTP server in the background
           background: true
       - run: yarn test
       - store_artifacts:
