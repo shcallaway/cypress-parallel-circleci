@@ -19,12 +19,14 @@ jobs:
           key: v1-deps-{{ .Branch }}
           paths:
             - node_modules
-            - ~/.cache
+            - /root/.cache
       - run: ls -al
       - run: pwd
       - persist_to_workspace:
-          root: /root/project
-          paths: .
+          root: /root
+          paths:
+            - ./project
+            - .cache
   test:
     <<: *defaults
     parallelism: 2
