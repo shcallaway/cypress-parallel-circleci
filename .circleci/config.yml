@@ -15,13 +15,11 @@ jobs:
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-            - ~/.npm
-            - ~/.cache
+            - .npm
+            - .cache
       - persist_to_workspace:
           root: .
-          paths:
-            - ~/.cache
-            - node_modules
+          paths: .
   test:
     parallelism: 2
     docker:
